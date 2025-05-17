@@ -221,7 +221,7 @@ nav {
 .hero__carousel__button--right:hover,
 .hero__carousel__button--left:focus,
 .hero__carousel__button--right:focus {
-    color: rgba(162, 8, 12, .5);
+    color: rgba(162, 8, 12, .75);
 }
 
 .hero__carousel__button--left {
@@ -247,7 +247,7 @@ nav {
 }
 
 .hero__carousel__slide img {
-    height: 600px;
+    height: 650px;
     object-fit: cover;
 }
 
@@ -255,34 +255,35 @@ nav {
     object-position: 20% 100%;
 }
 
+.hero__carousel__cta {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    width: 100%;
+}
+
 .cta {
     font-size: 2rem;
     position: absolute;
-    top: 500px;
-    left: 7%;
+    top: 100px;
     background: var(--tan);
     color: var(--black);
     border: none;
-    padding: 5px;
+    padding: 10px;
     border-radius: .5rem;
+    z-index: 2;
+    display: none;
 }
 
-#cta2 {
-    left: 34%;
-}
-
-#cta3 {
-    left: ;
-}
-
-#cta4 {
-    left: ;
+.cta.current-slide {
+    display: block;
 }
 
 .hero__carousel__indicators {
     position: absolute;
     display: flex;
-    top: 620px;
+    top: 650px;
     left: calc(50% - 2.8rem);
     z-index: 2;
 }
@@ -302,59 +303,9 @@ nav {
     border: 2px solid rgba(162, 8, 12, .5);
 }
 
-/* .hero__carousel__button--left,
-.hero__carousel__button--right {
-    position: absolute;
-    background: none;
-    border: none;
-    height: 80vh;
-    outline: none;
-    color: var(--green);
-    font-size: 3rem;
-    z-index: 2;
-    cursor: pointer;
-}
-
-.hero__carousel__button--left:hover,
-.hero__carousel__button--right:hover,
-.hero__carousel__button--left:focus,
-.hero__carousel__button--right:focus {
-    background: rgba(236, 223, 204, .2);
-}
-
-.hero__carousel__button--right {
-    right: 0;
-}
-
-.hero__carousel__slides {
-    list-style: none;
-    position: relative;
-    height: 100%;
-}
-
-.hero__carousel__slide {
-    position: absolute;
-    height: 80vh;
-    width: 100%;
-}
-
-.hero__carousel__slide img {
-    object-fit: cover;
-    height: 100%;
-}
-
-.hero__carousel__indicator {
-    border: 2px solid var(--tan);
-    border-radius: 50%;
-    width: 1rem;
-    height: 1rem;
-    background: rgba(236, 223, 204, .5);
-    cursor: pointer;
-}
-
 .hero__carousel__indicator.current-slide {
     background: rgba(236, 223, 204, .95);
-} */
+}
 
 .attribution {
     display: none;
