@@ -267,17 +267,23 @@ nav {
     font-size: 2rem;
     position: absolute;
     top: 100px;
-    background: var(--tan);
-    color: var(--black);
-    border: none;
+    background: none;
+    color: var(--tan);
+    border: 3px solid var(--tan);
     padding: 10px;
     border-radius: .5rem;
     z-index: 2;
     display: none;
+    cursor: pointer;
 }
 
 .cta.current-slide {
     display: block;
+}
+
+.cta:hover,
+.cta:focus {
+    background: rgba(0, 0, 0, .5);
 }
 
 .hero__carousel__indicators {

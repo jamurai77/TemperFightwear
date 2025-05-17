@@ -29,6 +29,11 @@ const moveToSlide = (slider, currentSlide, targetSlide) => {
     targetCta.classList.add('current-slide');
 }
 
+const updateDots = (currentDot, targetDot) => {
+    currentDot.classList.remove('current-slide');
+    targetDot.classList.add('current-slide');
+}
+
 hamburger.addEventListener('click', () => {
     sidebar.classList.toggle('sidebar--visible');
     bar.classList.toggle('menu-open');
@@ -44,18 +49,24 @@ searchIcon.addEventListener('click', () => {
 
 nextButton.addEventListener('click', e => {
     const currentSlide = slider.querySelector('.current-slide');
+    const targetSlide = currentSlide.nextElementSibling;
+    const currentDot = dotsNav.querySelector('.current-slide');
+    const targetDot = currentDot.nextElementSibling;
     if (!currentSlide.nextElementSibling) return;
 
-    const targetSlide = currentSlide.nextElementSibling;
     moveToSlide(slider, currentSlide, targetSlide);
+    updateDots(currentDot, targetDot);
 })
 
 prevButton.addEventListener('click', e => {
     const currentSlide = slider.querySelector('.current-slide');
+    const targetSlide = currentSlide.previousElementSibling;
+    const currentDot = dotsNav.querySelector('.current-slide');
+    const targetDot = currentDot.previousElementSibling;
     if (!currentSlide.previousElementSibling) return;
 
-    const targetSlide = currentSlide.previousElementSibling;
     moveToSlide(slider, currentSlide, targetSlide);
+    updateDots(currentDot, targetDot);
 })
 
 dotsNav.addEventListener('click', e => {
@@ -67,6 +78,5 @@ dotsNav.addEventListener('click', e => {
     const targetIndex = dots.findIndex(dot => dot === targetDot);
     const targetSlide = slides[targetIndex];
     moveToSlide(slider, currentSlide, targetSlide);
-    currentDot.classList.remove('current-slide');
-    targetDot.classList.add('current-slide');
+    updateDots(currentDot, targetDot);
 })
