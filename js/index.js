@@ -34,6 +34,19 @@ const updateDots = (currentDot, targetDot) => {
     targetDot.classList.add('current-slide');
 }
 
+const showHideArrow = (slides, prevButton, nextButton, targetIndex) => {
+    if (targetIndex === 0) {
+        prevButton.classList.add('is-hidden');
+        nextButton.classList.remove('is-hidden');
+    } else if (targetIndex === slides.length - 1) {
+        prevButton.classList.remove('is-hidden');
+        nextButton.classList.add('is-hidden');
+    } else {
+        prevButton.classList.remove('is-hidden');
+        nextButton.classList.remove('is-hidden');
+    }
+}
+
 hamburger.addEventListener('click', () => {
     sidebar.classList.toggle('sidebar--visible');
     bar.classList.toggle('menu-open');
@@ -52,10 +65,11 @@ nextButton.addEventListener('click', e => {
     const targetSlide = currentSlide.nextElementSibling;
     const currentDot = dotsNav.querySelector('.current-slide');
     const targetDot = currentDot.nextElementSibling;
-    if (!currentSlide.nextElementSibling) return;
+    const targetIndex = dots.findIndex(dot => dot === targetDot);
 
     moveToSlide(slider, currentSlide, targetSlide);
     updateDots(currentDot, targetDot);
+    showHideArrow(slides, prevButton, nextButton, targetIndex);
 })
 
 prevButton.addEventListener('click', e => {
@@ -63,10 +77,11 @@ prevButton.addEventListener('click', e => {
     const targetSlide = currentSlide.previousElementSibling;
     const currentDot = dotsNav.querySelector('.current-slide');
     const targetDot = currentDot.previousElementSibling;
-    if (!currentSlide.previousElementSibling) return;
+    const targetIndex = dots.findIndex(dot => dot === targetDot);
 
     moveToSlide(slider, currentSlide, targetSlide);
     updateDots(currentDot, targetDot);
+    showHideArrow(slides, prevButton, nextButton, targetIndex);
 })
 
 dotsNav.addEventListener('click', e => {
@@ -77,6 +92,8 @@ dotsNav.addEventListener('click', e => {
     const currentDot = dotsNav.querySelector('.current-slide');
     const targetIndex = dots.findIndex(dot => dot === targetDot);
     const targetSlide = slides[targetIndex];
+
     moveToSlide(slider, currentSlide, targetSlide);
     updateDots(currentDot, targetDot);
+    showHideArrow(slides, prevButton, nextButton, targetIndex);
 })

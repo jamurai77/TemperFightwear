@@ -317,6 +317,10 @@ nav {
     display: none;
 }
 
+.is-hidden {
+    display: none;
+}
+
 @media (min-width: 768px) {
     .hamburger {
         display: none;
