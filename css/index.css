@@ -30,13 +30,17 @@ img {
 }
 
 body {
-    background: var(--black);
+    background: black;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.3rem;
     text-decoration: none;
     color: var(--tan);
 }
 
+h2 {
+    font-weight: 100;
+    font-size: 1.5rem;
+}
 
 a {
     text-decoration: none;
@@ -201,7 +205,7 @@ nav {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 650px;
     background: var(--black);
 }
 
@@ -215,13 +219,14 @@ nav {
     color: var(--tan);
     font-size: 4rem;
     top: 352px;
+    cursor: pointer;
 }
 
 .hero__carousel__button--left:hover,
 .hero__carousel__button--right:hover,
 .hero__carousel__button--left:focus,
 .hero__carousel__button--right:focus {
-    color: rgba(162, 8, 12, .75);
+    color: white;
 }
 
 .hero__carousel__button--left {
@@ -266,7 +271,7 @@ nav {
 .cta {
     font-size: 2rem;
     position: absolute;
-    top: 100px;
+    top: 165px;
     background: none;
     color: var(--tan);
     border: 3px solid var(--tan);
@@ -283,7 +288,9 @@ nav {
 
 .cta:hover,
 .cta:focus {
-    background: rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, .2);
+    color: white;
+    border: 3px solid white;
 }
 
 .hero__carousel__indicators {
@@ -306,11 +313,25 @@ nav {
 
 .hero__carousel__indicator:focus,
 .hero__carousel__indicator:hover {
-    border: 2px solid rgba(162, 8, 12, .5);
+    border: 2px solid white;
 }
 
 .hero__carousel__indicator.current-slide {
     background: rgba(236, 223, 204, .95);
+}
+
+.hero__footer {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 10px;
+}
+
+.hero__footer a {
+    cursor: pointer;
+}
+
+.hero__footer a:hover {
+    color: white;
 }
 
 .attribution {
@@ -319,6 +340,43 @@ nav {
 
 .is-hidden {
     display: none;
+}
+
+main {
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-top: 1px solid var(--green);
+}
+
+.collection {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 328px);
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+.collection-title {
+    font-size: 2.5rem;
+    font-weight: 200;
+    padding: 10px;
+}
+
+.collection__img {
+    display: block;
+    height: 350px;
+    background-image: radial-gradient(var(--tan), #6d6d6a);
+}
+
+.collection__img img {
+    height: 100%;
+}
+
+.item-text {
+    margin-top: 1rem;
 }
 
 @media (min-width: 768px) {
