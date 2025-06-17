@@ -6,6 +6,15 @@
     --animation-timing: 300ms ease-in-out;
 }
 
+@font-face {
+    font-family: 'Againts';
+    src: url('assets/fonts/subset-Againts.woff2') format('woff2'),
+        url('assets/fonts/subset-Againts.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
 *,
 *:before,
 *:after {
@@ -245,6 +254,7 @@ nav {
     width: 400%;
     height: 600px;
     background: var(--black);
+    transition: left 500ms ease-in-out;
 }
 
 .hero__carousel__slide {
