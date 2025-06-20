@@ -15,7 +15,6 @@ const cta = document.querySelector('.hero__carousel__cta');
 const dots = Array.from(dotsNav.children);
 const ctas = Array.from(cta.children);
 
-
 const moveToSlide = (slider, currentSlide, targetSlide) => {
     const currentIndex = slides.indexOf(currentSlide);
     const targetIndex = slides.indexOf(targetSlide);

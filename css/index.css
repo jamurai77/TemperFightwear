@@ -3,6 +3,7 @@
     --grey: #3C3D37;
     --green: #697565;
     --tan: #ECDFCC;
+    --red: #a2080c;
     --animation-timing: 300ms ease-in-out;
 }
 
@@ -33,6 +34,9 @@ textarea {
     font-family: inherit;
 }
 
+ul {
+    list-style: none;
+}
 
 img {
     width: 100%;
@@ -54,9 +58,21 @@ h2 {
 a {
     text-decoration: none;
     color: var(--tan);
+    cursor: pointer;
+}
+
+a:hover {
+    color: white;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
 }
 
 nav {
+    background: black;
     font-weight: 400;
     font-size: clamp(1.5rem, 3vw, 2rem);
     padding: .5rem;
@@ -261,6 +277,32 @@ nav {
     width: 100vw;
 }
 
+.hero__carousel__slide span {
+    background: none;
+    position: absolute;
+    font-family: 'Againts', sans-serif;
+    margin-left: min(10vw, 200px);
+}
+
+#mThai {
+    font-size: clamp(4.5rem, 10vw, 10rem);
+    color: #a2080c;
+    top: 1.5rem;
+}
+
+#mma {
+    font-size: clamp(4rem, 10vw, 10rem);
+    color: var(--green);
+    top: 10px;
+    /* margin-left: max(30px, 7vw); */
+}
+
+#bjj {
+    font-size: clamp(3rem, 10vw, 5rem);
+    color: var(--tan);
+    top: 20px;
+}
+
 .hero__carousel__slide img {
     height: 650px;
     object-fit: cover;
@@ -336,14 +378,6 @@ nav {
     padding: 10px;
 }
 
-.hero__footer a {
-    cursor: pointer;
-}
-
-.hero__footer a:hover {
-    color: white;
-}
-
 .attribution {
     display: none;
 }
@@ -367,6 +401,7 @@ main {
     grid-template-columns: repeat(auto-fit, 328px);
     justify-content: space-evenly;
     gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .collection-title {
@@ -387,6 +422,32 @@ main {
 
 .item-text {
     margin-top: 1rem;
+}
+
+footer {
+    border-top: 2px solid var(--tan);
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    margin: 2rem;
+}
+
+.contact {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact span {
+    margin-bottom: 1rem;
+}
+
+.social a {
+    padding: .5rem;
 }
 
 @media (min-width: 768px) {
