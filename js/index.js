@@ -2,8 +2,8 @@ const hamburger = document.querySelector('.hamburger');
 const sidebar = document.querySelector('.sidebar');
 const bar = document.querySelector('.bar');
 
-const searchIcon = document.querySelector('.bx-search');
-const searchBar = document.querySelector('.search-bar');
+// const searchIcon = document.querySelector('.fa-solid fa-magnifying-glass');
+// const searchBar = document.querySelector('.search-bar');
 const menuTitle = document.querySelector('.menu-title');
 
 const slider = document.querySelector('.hero__carousel__slider');
@@ -55,9 +55,9 @@ menuTitle.addEventListener('click', () => {
     sidebar.classList.toggle('sidebar--visible');
 })
 
-searchIcon.addEventListener('click', () => {
-    searchBar.classList.toggle('search-open');
-})
+// searchIcon.addEventListener('click', () => {
+//     searchBar.classList.toggle('search-open');
+// })
 
 nextButton.addEventListener('click', e => {
     const currentSlide = slider.querySelector('.current-slide');

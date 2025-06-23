@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -31,25 +31,24 @@
                 </ul>
             </aside>
             <a href="#" class="menu-title">COLLECTIONS</a>
-            <a class="logo" href="#"><img src="./images/Icons/Asset 5.svg" alt=""></a>
+            <a class="logo" href="#"><img src="./assets/images/Icons/Asset 5.svg" alt=""></a>
             <ul class="nav-list">
                 <li class="nav-list__item">
                     <a href="#">
-                        <i class='bx bx-search'></i>
+
                     </a>
                 </li>
                 <li class="nav-list__item">
                     <a href="#">
-                        <i class='bx bx-cart'></i>
+                        <i class="fa-solid fa-cart-shopping"></i>
                     </a>
                 </li>
             </ul>
         </nav>
-        <aside class="search-bar">
-            <label for="search">
-                <input type="text" name="" id="search" placeholder="Search">
-            </label>
-        </aside>
+        <form class="search-bar">
+            <input type="search" name="" id="search" placeholder="Search here..."><i
+                class="fa-solid fa-magnifying-glass"></i>
+        </form>
     </header>
     <section class="hero__carousel">
         <button class="hero__carousel__button--left is-hidden">
@@ -57,22 +56,23 @@
         </button>
         <div class="hero__carousel__slider">
             <div class="hero__carousel__slide current-slide">
-                <img src="./images/Hero/Hero1.png"
+                <img src="./assets/images/Hero/Hero1.png"
                     alt="fighter in headgear and boxing gloves with his back turned in front of a black and gold background of japanese dragons">
             </div>
             <div class="hero__carousel__slide">
                 <span id="mThai">Muay Thai</span>
-                <img src="./images/Hero/HeroMT.png"
+                <img src="./assets/images/Hero/HeroMT.png"
                     alt="Muay Thai fighter blurring from right to left while throwing a knee strike">
             </div>
             <div class="hero__carousel__slide">
                 <span id="mma">MMA</span>
-                <img src="./images/Hero/HeroMMA.png"
+                <img src="./assets/images/Hero/HeroMMA.png"
                     alt="MMA fighter in a ring mounted on top of opponent with arm raised ready to strike">
             </div>
             <div class="hero__carousel__slide gary">
                 <span id="bjj">Jiu-Jitsu</span>
-                <img src="./images/Hero/HeroBJJ.png" alt="Two grapplers hunched down and facing off in the cage ">
+                <img src="./assets/images/Hero/HeroBJJ.png"
+                    alt="Two grapplers hunched down and facing off in the cage ">
             </div>
         </div>
         <button class="hero__carousel__button--right">
@@ -99,7 +99,7 @@
         <section class="collection">
             <article class="collection__item">
                 <picture class="collection__img">
-                    <img src="./images/MT/Shirts/FLATblk.png" alt="">
+                    <img src="./assets/images/MT/Shirts/FLATblk.png" alt="">
                 </picture>
                 <section class="item-text">
                     <h2 class="item-name">Thai Fighter Tee</h2>
@@ -108,7 +108,7 @@
             </article>
             <article class="collection__item">
                 <picture class="collection__img">
-                    <img src="./images/MT/Shorts/ThaiShortsGreen.png" alt="">
+                    <img src="./assets/images/MT/Shorts/ThaiShortsGreen.png" alt="">
                 </picture>
                 <section class="item-text">
                     <h2 class="item-name">Muay Thai Fight Shorts</h2>
@@ -117,7 +117,7 @@
             </article>
             <article class="collection__item">
                 <picture class="collection__img">
-                    <img src="./images/MMA/Shirts/HitLikeAGirl.png" alt="">
+                    <img src="./assets/images/MMA/Shirts/HitLikeAGirl.png" alt="">
                 </picture>
                 <section class="item-text">
                     <h2 class="item-name">Hit Like A Girl Tee</h2>
@@ -126,7 +126,7 @@
             </article>
             <article class="collection__item">
                 <picture class="collection__img">
-                    <img src="./images/MMA/Shorts/MMAshortsBlkGld.png" alt="">
+                    <img src="./assets/images/MMA/Shorts/MMAshortsBlkGld.png" alt="">
                 </picture>
                 <section class="item-text">
                     <h2 class="item-name">MMA Fight Shorts</h2>
@@ -136,6 +136,13 @@
         </section>
     </main>
     <footer>
+        <article class="newsletter">
+            <p>Sign up to get the latest on sales, new releases and more…</p>
+            <form class="signUp">
+                <input type="email" placeholder="Email address">
+                <button>sign up</button>
+            </form>
+        </article>
         <article class="footer-nav">
             <ul>
                 <li><a href="#">Create an Account</a></li>
@@ -152,6 +159,7 @@
             </div>
         </article>
     </footer>
+    <i class="fa-regular fa-copyright"> 2025</i>
     <div class="attribution">
         Photo by <a
             href="https://unsplash.com/@vlbychkov?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Vladislav

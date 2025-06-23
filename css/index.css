@@ -9,8 +9,12 @@
 
 @font-face {
     font-family: 'Againts';
-    src: url('assets/fonts/subset-Againts.woff2') format('woff2'),
-        url('assets/fonts/subset-Againts.woff') format('woff');
+    src: url('assets/fonts/subset-Againts.eot');
+    src: url('assets/fonts/subset-Againts.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/subset-Againts.woff2') format('woff2'),
+        url('assets/fonts/subset-Againts.woff') format('woff'),
+        url('assets/fonts/subset-Againts.ttf') format('truetype'),
+        url('assets/fonts/subset-Againts.svg#Againts') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -90,12 +94,8 @@ nav {
     align-items: center;
 }
 
-.nav-list-item {
-    margin-right: .5rem;
-}
-
-.nav-list-item input {
-    appearance: none;
+.nav-list__item {
+    padding-right: .5rem;
 }
 
 .nav-list-item:checked {
@@ -173,14 +173,14 @@ nav {
     top: 50px;
     background-color: var(--black);
     width: 15rem;
-    height: 60vh;
+    /* height: 60vh; */
     padding: 1.5rem;
     box-shadow: 0 8px 15px 0 rgba(0, 0, 0, .5);
     z-index: 3;
 }
 
 .sidebar--visible {
-    translate: 0;
+    translate: -4%;
 }
 
 .sidebar__list {
@@ -190,48 +190,72 @@ nav {
     list-style: none;
 }
 
-.sidebar-item {
-    margin-bottom: 2rem;
+.sidebar__item {
+    margin-bottom: 1rem;
     cursor: pointer;
 }
 
 .search-bar {
-    opacity: 0;
-    transform: translateY(-150px);
     position: absolute;
-    top: 50px;
-    font-family: 'Nunito', sans-serif;
-    background-color: var(--black);
-    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, .5);
-    text-align: center;
-    padding: 8px;
-    height: 4rem;
-    width: 100%;
-    z-index: 3;
-    transition: opacity var(--animation-timing), transform var(--animation-timing);
-}
-
-.search-open {
-    opacity: 1;
-    transform: translateY(0);
+    background: var(--tan);
+    box-sizing: border-box;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 500px;
+    border: 4px solid var(--tan);
+    padding: 5px;
+    right: 0;
+    transition: all var(--animation-timing);
 }
 
 #search {
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: 0;
+    border: none;
     background-color: var(--tan);
     border-radius: 16px;
     font-size: 1rem;
-    padding: .4rem .8rem;
-    width: 80%;
-    max-width: 700px;
+    padding: .6rem .8rem;
+    width: 100%;
+}
+
+.fa-magnifying-glass {
+    box-sizing: border-box;
+    border-radius: 100px;
+    color: black;
+    padding: 9px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    transform: all 1s;
+}
+
+.search-bar:hover {
+    width: 300px;
+    cursor: pointer;
+}
+
+.search-bar:hover input {
+    display: block;
+}
+
+.search-bar:hover i {
+    background: black;
+    color: var(--tan);
 }
 
 .hero__carousel {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     height: 650px;
     background: var(--black);
+    overflow: hidden;
 }
 
 .hero__carousel__button--left,
@@ -265,7 +289,7 @@ nav {
 .hero__carousel__slider {
     display: flex;
     position: absolute;
-    top: 52px;
+    top: 0px;
     left: 0%;
     width: 400%;
     height: 600px;
@@ -348,7 +372,7 @@ nav {
 .hero__carousel__indicators {
     position: absolute;
     display: flex;
-    top: 650px;
+    top: 600px;
     left: calc(50% - 2.8rem);
     z-index: 2;
 }
@@ -426,20 +450,37 @@ main {
 
 footer {
     border-top: 2px solid var(--tan);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 3rem 0;
 }
 
 .footer-nav {
     display: flex;
     flex-direction: column;
-    align-items: center;
     font-family: 'Nunito', sans-serif;
-    margin: 2rem;
+    margin: 0 0 2rem 2rem;
+    width: 300px;
+}
+
+.footer-nav li {
+    padding: .5rem 0;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+    font-weight: 600;
 }
 
 .contact {
     text-align: center;
     display: flex;
     flex-direction: column;
+    margin: 0 1rem 2rem 1rem;
+    padding-top: 1rem;
 }
 
 .contact span {
@@ -447,7 +488,42 @@ footer {
 }
 
 .social a {
-    padding: .5rem;
+    padding: .75rem;
+}
+
+.newsletter {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+}
+
+.signUp input {
+    margin: .5rem 0;
+    width: 300px;
+    padding: .25rem;
+}
+
+.signUp button {
+    background: var(--green);
+    border: none;
+    color: var(--tan);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    padding: 0.25rem .5rem;
+    cursor: pointer;
+}
+
+.signUp button:hover,
+.signUp button:focus {
+    background: var(--tan);
+    color: var(--green);
+}
+
+.fa-copyright {
+    font-size: 1rem;
+    position: absolute;
+    right: .5rem;
 }
 
 @media (min-width: 768px) {
