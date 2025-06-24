@@ -55,9 +55,24 @@ menuTitle.addEventListener('click', () => {
     sidebar.classList.toggle('sidebar--visible');
 })
 
-// searchIcon.addEventListener('click', () => {
-//     searchBar.classList.toggle('search-open');
-// })
+setInterval(function () {
+    const currentSlide = slider.querySelector('.current-slide');
+    const currentIndex = slides.indexOf(currentSlide);
+    var targetSlide = currentSlide.nextElementSibling;
+    const currentDot = dotsNav.querySelector('.current-slide');
+    var targetDot = currentDot.nextElementSibling;
+    var targetIndex = dots.findIndex(dot => dot === targetDot);
+
+    if (currentIndex === slides.length - 1) {
+        targetSlide = slides[0];
+        targetDot = dots[0];
+        targetIndex = 0;
+    };
+
+    moveToSlide(slider, currentSlide, targetSlide);
+    updateDots(currentDot, targetDot);
+    showHideArrow(slides, prevButton, nextButton, targetIndex);
+}, 3500);
 
 nextButton.addEventListener('click', e => {
     const currentSlide = slider.querySelector('.current-slide');
