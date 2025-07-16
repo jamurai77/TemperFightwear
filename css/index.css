@@ -9,12 +9,12 @@
 
 @font-face {
     font-family: 'Againts';
-    src: url('assets/fonts/subset-Againts.eot');
-    src: url('assets/fonts/subset-Againts.eot?#iefix') format('embedded-opentype'),
-        url('assets/fonts/subset-Againts.woff2') format('woff2'),
-        url('assets/fonts/subset-Againts.woff') format('woff'),
-        url('assets/fonts/subset-Againts.ttf') format('truetype'),
-        url('assets/fonts/subset-Againts.svg#Againts') format('svg');
+    src: url('/Temper/assets/fonts/subset-Againts.eot');
+    src: url('/Temper/assets/fonts/subset-Againts.eot?#iefix') format('embedded-opentype'),
+        url('/Temper/assets/fonts/subset-Againts.woff2') format('woff2'),
+        url('/Temper/assets/fonts/subset-Againts.woff') format('woff'),
+        url('/Temper/assets/fonts/subset-Againts.ttf') format('truetype'),
+        url('/Temper/assets/fonts/subset-Againts.svg#Againts') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
